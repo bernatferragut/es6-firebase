@@ -3,7 +3,17 @@
 // On load
 window.addEventListener('load', function() {
 
-    console.log('loaded');
+    // Select Button
+    const myButton = document.querySelector('.btn');
+
+    // Select Score
+    const result = document.querySelector('.result');
+
+    // Select Input
+    const player = document.querySelector('input');
+
+    //Select Submit
+    const submit = document.querySelector('.submit');
 
     // Initialize Firebase
     var config = {
@@ -14,34 +24,33 @@ window.addEventListener('load', function() {
         storageBucket: "simple-db-1.appspot.com",
         messagingSenderId: "335823253560"
     };
-  firebase.initializeApp(config);
+    firebase.initializeApp(config);
 
-    // db Connection
-    let database = firebase.database();
-    let ref = database.ref('scores'); // accessing the 'scores' node
+     // db Connection
+    const database = firebase.database();
 
-    // my Data
-    let data = {
-        name: 'Bernat',
-        score: 44        
-    }
-
-    // adding Data to Database
-    ref.push(data);
-
-    // Select Button
-    const myButton = document.querySelector('.btn');
-
-    // Select Score
-    const result = document.querySelector('.result');
+    // Create data Object to Submit to database
+    submit.addEventListener( 'onsubmit', function(e) {
+        var data = {
+            name: player.value,
+            score: score
+        }
+        console.log(data);
+        // accessing the 'scores' node
+        const ref = database.ref('scores'); 
+        // adding Data to Database
+        ref.push(data);
+    });
 
     // Game
     let score = result.textContent;
-        myButton.addEventListener('click', function(e) {
-            score++;
-            // console.log('clicked!');
-            // console.log(score);
-            result.textContent =  score;
-        });
+    myButton.addEventListener('click', function(e) {
+        score++;
+         // console.log('clicked!');
+        // console.log(score);
+         result.textContent =  score;
+
+        return score && player.value;
+    });
 })
 
