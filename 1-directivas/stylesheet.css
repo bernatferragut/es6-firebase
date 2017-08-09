@@ -1,0 +1,9 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex: vertical;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1em;
+}
