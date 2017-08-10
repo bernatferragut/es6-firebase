@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
     const database = firebase.database();
 
     // Create data Object to Submit to database
-    submit.addEventListener( 'onsubmit', function(e) {
+    submit.addEventListener( 'click', function() {
         var data = {
             name: player.value,
             score: score
