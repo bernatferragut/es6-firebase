@@ -1,0 +1,46 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>FIREBASE DB 1.0</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Temp: </h1>
+        <temperature></temperature>
+    </div>
+    <div class="container">
+        <h1>Humid: </h1>
+        <humidity></humidity>
+    </div>
+    <div class="container">
+        <h1>Time: </h1>
+        <clock></clock>
+    </div>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDJOIovuSj706mkKosauT_cfKndaHcyZ-U",
+            authDomain: "simple-db-1.firebaseapp.com",
+            databaseURL: "https://simple-db-1.firebaseio.com",
+            projectId: "simple-db-1",
+            storageBucket: "simple-db-1.appspot.com",
+            messagingSenderId: "335823253560"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>
