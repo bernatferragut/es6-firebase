@@ -1,0 +1,49 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>TWO INPUTS</title>
+</head>
+
+<body>
+    <!-- FORM -->
+    <div class="container">
+        <!-- CALL FORM WRITE FUNCTION -->
+        <form>
+            <label for="name">Name></label>
+            <input type="text" name="name">
+            <label for="pwd">Password></label>
+            <input type="password" name="pwd">
+            <input type="submit" value="SUBMIT">
+        </form>
+    </div>
+    <!-- RESULTS -->
+    <div class="container">
+        <user>Bernat Ferragut</user>
+        <password>thisismypassword</password>
+    </div>
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDJOIovuSj706mkKosauT_cfKndaHcyZ-U",
+            authDomain: "simple-db-1.firebaseapp.com",
+            databaseURL: "https://simple-db-1.firebaseio.com",
+            projectId: "simple-db-1",
+            storageBucket: "simple-db-1.appspot.com",
+            messagingSenderId: "335823253560"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>

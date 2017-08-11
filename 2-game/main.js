@@ -26,7 +26,8 @@ window.addEventListener('load', function() {
      // db Connection
     const database = firebase.database();
     // accessing the 'scores' node
-    const ref = database.ref('scores'); 
+    const ref = database.ref('scores');
+    
     // start to bind different kind of events like data or a 'value'
     ref.on('value', gotData, errData);
     //Functions
